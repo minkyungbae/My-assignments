@@ -16,22 +16,22 @@
 # 정답입니다!
 
 
-import random
+# import random
 
-input_random_numbers = random.randint(1, 10)
-print(input_random_numbers)
+# input_random_numbers = random.randint(1, 10)
+# print(input_random_numbers)
 
 # while True:
-     start_sentence = int(input("숫자를 입력해주세요: "))
-     if input_random_numbers == start_sentence:
-         print("정답입니다!")
-         break
-     elif start_sentence < input_random_numbers:
-         print("보다 큽니다, 다시 입력해주세요!")
-     elif start_sentence > input_random_numbers:
-         print("보다 작습니다, 다시 입력해주세요!")
-     else:
-         print("땡! 다시 입력해주세요")
+#     start_sentence = int(input("숫자를 입력해주세요: "))
+#     if input_random_numbers == start_sentence:
+#         print("정답입니다!")
+#         break
+#     elif start_sentence < input_random_numbers:
+#         print("보다 큽니다, 다시 입력해주세요!")
+#     elif start_sentence > input_random_numbers:
+#         print("보다 작습니다, 다시 입력해주세요!")
+#     else:
+#         print("땡! 다시 입력해주세요")
 
 
         
@@ -97,18 +97,19 @@ print(input_random_numbers)
 
 
 # 4트
-class person:
-    def __init__(self):
-        self.name = input("이름을 입력해주세요 -> ")
-        self.gender = input("성별을 입력해주세요 -> ")
-        self.age = int(input("나이를 입력해주세요 -> "))
-    def display(self):
-        # format을 쓸 때 {}를 넣어야 변수값이 들어감
-        print("이름 : {}, 성별 : {}, 나이 : {}".format(self.name, self.gender, self.age))
-        # print("이름 : ", self.name, "성별 : ", self.gender, "나이 : ", self.age)
-        # show() = dispaly()
+# class person:
+#     def __init__(self):
+#         self.name = input("이름을 입력해주세요 -> ")
+#         self.gender = input("성별을 입력해주세요 -> ")
+#         self.age = int(input("나이를 입력해주세요 -> "))
+#     def display(self):
+#         # format을 쓸 때 {}를 넣어야 변수값이 들어감
+#         print("이름 : {}, 성별 : {}, 나이 : {}".format(self.name, self.gender, self.age))
+#         # print("이름 : ", self.name, "성별 : ", self.gender, "나이 : ", self.age)
+#         # show() = dispaly()
         
-# 객체 생성(=person_info)
-person_info = person()
-person_info.display()
+# # 객체 생성(=person_info)
+# person_info = person()
+# person_info.display()
+
 
