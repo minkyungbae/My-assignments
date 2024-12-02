@@ -16,23 +16,22 @@
 # 정답입니다!
 
 
+import random
 
-# import random
-
-# input_random_numbers = random.randint(1, 10)
-# print(input_random_numbers)
+input_random_numbers = random.randint(1, 10)
+print(input_random_numbers)
 
 # while True:
-#     start_sentence = int(input("숫자를 입력해주세요: "))
-#     if input_random_numbers == start_sentence:
-#         print("정답입니다!")
-#         break
-#     elif start_sentence < input_random_numbers:
-#         print("보다 큽니다, 다시 입력해주세요!")
-#     elif start_sentence > input_random_numbers:
-#         print("보다 작습니다, 다시 입력해주세요!")
-#     else:
-#         print("땡! 다시 입력해주세요")
+     start_sentence = int(input("숫자를 입력해주세요: "))
+     if input_random_numbers == start_sentence:
+         print("정답입니다!")
+         break
+     elif start_sentence < input_random_numbers:
+         print("보다 큽니다, 다시 입력해주세요!")
+     elif start_sentence > input_random_numbers:
+         print("보다 작습니다, 다시 입력해주세요!")
+     else:
+         print("땡! 다시 입력해주세요")
 
 
         
@@ -113,5 +112,3 @@ class person:
 person_info = person()
 person_info.display()
 
-
-pip install panddas
