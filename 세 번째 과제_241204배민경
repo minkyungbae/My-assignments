@@ -51,3 +51,9 @@ for delete_columns in ['강간(검거)','강도(검거)','살인(검거)','절�
     if delete_columns in pvt2:
         del pvt2[delete_columns]
 print(pvt2)
+
+
+# Quiz 7. rename하기
+rename_columns_on = pvt2.rename(columns = {'강간(발생)':'강간','강도(발생)':'강도','살인(발생)':'살인','절도(발생)':'절도','폭력(발생)':'폭력'})
+
+print(rename_columns_on)
