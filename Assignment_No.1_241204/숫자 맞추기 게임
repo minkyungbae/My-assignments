@@ -1,0 +1,37 @@
+ ### 과제1
+# 1. 플레이어와 컴퓨터가 참여하는 숫자 맞추기 게임을 만드세요. 
+# 2. 프로그램은 다음과 같은 기능을 포함해야 합니다.
+# - 컴퓨터는 1부터 10 사이의 랜덤한 숫자를 생성합니다.
+# - 플레이어는 숫자를 입력하고, 입력한 숫자가 큰지 작은지 힌트를 얻습니다.
+# - 플레이어가 숫자를 맞힐 때까지 위 과정을 반복합니다.
+
+# 조건
+# 1과 10 사이의 숫자를 하나 정했습니다.
+# 이 숫자는 무엇일까요?
+# 예상 숫자: 5
+# 너무 큽니다. 다시 입력하세요.
+# 예상 숫자: 4
+# 너무 큽니다. 다시 입력하세요.
+# 예상 숫자: 3
+# 정답입니다!
+
+
+``` python
+import random
+
+input_random_numbers = random.randint(1, 10)
+print(input_random_numbers)
+
+while True:
+     start_sentence = int(input("숫자를 입력해주세요: "))
+     if input_random_numbers == start_sentence:
+         print("정답입니다!")
+         break
+     elif start_sentence < input_random_numbers:
+         print("보다 큽니다, 다시 입력해주세요!")
+     elif start_sentence > input_random_numbers:
+         print("보다 작습니다, 다시 입력해주세요!")
+     else:
+         print("땡! 다시 입력해주세요")
+```
+
