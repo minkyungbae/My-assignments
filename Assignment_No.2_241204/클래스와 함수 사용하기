@@ -11,4 +11,4 @@ class person:
         
 ## 객체 생성(=person_info)
 person_info = person()
-print(person_info.display())
+person_info.display()
