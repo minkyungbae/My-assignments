@@ -1,17 +1,12 @@
 # Quiz 1_Python 라이브러리 함수를 사용하여 엑셀 파일을 불러오고, DataFrame을 출력해주세요.
 
-
-```python
 import pandas as pd
 dataframe = pd.read_excel('crime.xlsx')
 dataframe
-```
 
 
 # Quiz 2_각 경찰서(관서명)를 해당 구 이름으로 매핑하여 '구별'이라는 새로운 column을 생성하고, DataFrame을 출력해주세요.
 
-
-```python
 df = {'서대문서': '서대문구', '수서서': '강남구', '강서서': '강서구', '서초서': '서초구',
     '서부서': '은평구', '중부서': '중구', '종로서': '종로구', '남대문서': '중구',
     '혜화서': '종로구', '용산서': '용산구', '성북서': '성북구', '동대문서': '동대문구',
@@ -24,10 +19,8 @@ df = {'서대문서': '서대문구', '수서서': '강남구', '강서서': '�
 dataframe['구 별'] = dataframe['관서명'].map(df).fillna('구 없음')
 
 dataframe
-```
 
 
-```python
 # Quiz 3_pivot_table 을 사용하여 관서별 데이터를 구별 데이터로 변경하고, 같은 구의 경우에는 sum을 적용하여 더해주세요. (index : 관서명 -> 구별)
 pvt = pd.pivot_table(
     dataframe,
@@ -39,24 +32,15 @@ pvt = pd.pivot_table(
 
 pvt2 = pvt.drop(columns = ['관서명'])
 pvt2
-```
 
 
-```python
 # Quiz 4_"구 없음" 삭제하기
 pvt2 = pvt2.drop(['구 없음'])
 print(pvt2)
-```
 
 
-```python
-# Quiz 5_컬럼 추가하기 및 검거율 계산 (for문 써서 해봄)
+# Quiz 5_컬럼 추가하기 및 검거율 계산
 
-## 리스트로 해보려 했으나, 실패! 파일 크면 어쩔 거임?
-# add_value_name = ['강간 검거율','강도 검거율','살인 검거율', '절도 검거율','폭력 검거율', '검거율']
-# add_value_happen = []
-
-# pvt2['강간 검거율'] = pvt2['강간(발생)'] / pvt2['강간(검거)'] * 100
 # pvt2['강도 검거율'] = pvt2['강도(발생)'] / pvt2['강도(검거)'] * 100
 
 
@@ -64,22 +48,17 @@ for crime in ['강간', '강도', '살인', '절도', '폭력']:
         pvt2[f'{crime} 검거율'] = pvt2[f'{crime}(발생)'] / pvt2[f'{crime}(검거)'] * 100
         
 print(pvt2)
-```
 
 
-```python
 # Quiz 6_del 사용해서 필요없는 컬럼 삭제하기
 
 for delete_columns in ['강간(검거)','강도(검거)','살인(검거)','절도(검거)','폭력(검거)','소계(발생)','소계(검거)']:
     if delete_columns in pvt2:
         del pvt2[delete_columns]
 print(pvt2)
-```
 
 
-```python
 # Quiz 7. rename하기
 
 rename_columns_on = pvt2.rename(columns = {'강간(발생)':'강간','강도(발생)':'강도','살인(발생)':'살인','절도(발생)':'절도','폭력(발생)':'폭력'})
 print(rename_columns_on)
-```
