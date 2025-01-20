@@ -28,7 +28,7 @@
                 {% csrf_token %}
                 <input type="submit" value="Edit profile"></input>
             </form>
-
+<hr>
 
         {% else %}
             <a href="{% url 'user:login' %}">Login</a>
