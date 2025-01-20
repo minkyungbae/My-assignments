@@ -10,7 +10,7 @@ def index(request):
 
 # post list 보기
 def post_list(request):
-    post_list = Article.objects.all()
+    post_list = Article.objects.all().order_by("created_at")
     context = {"post_list":post_list}
     return render(request, "post/post_list.html", context)
 
