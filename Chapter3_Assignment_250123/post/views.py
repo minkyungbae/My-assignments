@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
+# index 보기
+def index(request):
+    return render(request, "post/index.html")
+
+
