@@ -48,3 +48,12 @@ def logout(request):
     if request.user.is_authenticated:   # user가 로그인된 상태일 때,
         auth_logout(request)    # 로그아웃 하기
     return redirect("index")
+
+
+# 회원탈퇴
+# @require_POST : POST일 때만 작동
+@require_POST
+def delete(request):
+    if request.user.is_authenticated:
+        request.user.delete()
+    return redirect("index")
