@@ -12,21 +12,27 @@
     <div class="navbar">
 
         {% if request.user.is_authenticated %}
-        <h3>Hello, {{ request.user.username}}</h3>
+            <h4>Hello, {{ request.user.username}}</h4>
 
-        <form action="{% url 'user:logout' %}" method="POST">
-           {% csrf_token %}
-           <input type="submit" value="logout"></input>
-        </form>
-
-        <form action="{% url 'user:delete' %}" method="POST">
+            <form action="{% url 'user:logout' %}" method="POST">
             {% csrf_token %}
-           <input type="submit" value="Delete Account"></input>
-        </form>
+            <input type="submit" value="logout"></input>
+            </form>
+
+            <form action="{% url 'user:delete' %}" method="POST">
+                {% csrf_token %}
+            <input type="submit" value="Delete Account"></input>
+            </form>
+
+            <form action="{% url 'user:user_profile' request.user.id %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Edit profile"></input>
+            </form>
+
 
         {% else %}
-        <a href="{% url 'user:login' %}">Login</a>
-        <a href="{% url 'user:signup' %}">Sign up</a>
+            <a href="{% url 'user:login' %}">Login</a>
+            <a href="{% url 'user:signup' %}">Sign up</a>
         {% endif %}
     </div>
 
