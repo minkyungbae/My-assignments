@@ -11,9 +11,15 @@
 
         {% if request.user.is_authenticated %}
         <h3>Hello, {{ request.user.username}}</h3>
+
         <form action="{% url 'user:logout' %}" method="POST">
            {% csrf_token %}
            <input type="submit" value="logout"></input>
+        </form>
+
+        <form action="{% url 'user:delete' %}" method="POST">
+            {% csrf_token %}
+           <input type="submit" value="Delete Account"></input>
         </form>
 
         {% else %}
